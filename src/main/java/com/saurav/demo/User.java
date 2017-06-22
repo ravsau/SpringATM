@@ -13,7 +13,7 @@ public class User {
 
     private String name;
 
-    private String email;
+    private String food;
 
 	public Integer getId() {
 		return id;
@@ -31,13 +31,19 @@ public class User {
 		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getFood() {
+		return food;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setFood(String food) {
+		this.food = food;
 	}
 
-
+    @Override
+    public String toString(){
+		return( getId()+"\n"+getName()+"\n"+getFood()+"\n");
+    	
+    	
+    }
+    
 }
