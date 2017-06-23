@@ -1,141 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Spring Boot Bank</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   
-    <script src="js/bootstrap.min.js"></script>
+      
   
 
    <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 	
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
 	
-	
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
       
       
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
       
    
     
-    
-    <style>
-    
-    .navbar{
-    
-    color: blue;
-    
-    margin-bottom: 0px;
-    }
-    
-     .row-fluid{
-    margin:auto;
-    
-    background-color:#84ffff;
-    width:100%;
-    height:220px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-  	font-weight: 700;
-  	font-size:40px;
- 
-   
-    
-    
-    }
-    
-    #right{
-    
-    margin:auto;
-    
-    }
-    .row1{
-    
-    background-color:#e1f5fe;
-    width:100%;
-    height:700px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-  	font-weight: 1100;
-    padding: 50px 50px 50px 50px;
-    margin:0px 0px 0px 0px ;
-    text-align:center;
-    
-    
-    }
-    
-   
-   
-    .left{
-    
-    width:100%;
-    height:400px;
-    margin:0px 0px 0px 0px;
-    background-color:#e1f5fe;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-  	font-weight: 400;
-  	
-  	padding-left:10%;
-  	padding-right:10%;
-  	
-    }
-    
-     .main{
-    
-    margin:0px 0px 0px 0px;
-    padding: 0px 100px 0px 100px;
-    background-color:#84ffff;
-    width:100%;
-    height:1068px;
-    
-    
-    
-    }
-    
-    #img{
-    
-    width:200px;
-    height:200px;
-    filter: grayscale(50%) brightness(200%);
-    
-    
-    }
-    
-    #footer{
-    
-    text-align:right;
-    font-weight:500
-    padding-left:50px;}
-    
-    
-      #social{
-    
-   
-    font-weight:500
-     
-    margin-top:100px;
-    	padding-left:10%;
-  	padding-right:10%;
-  	padding-top:150px;}
-    
-    
-    
-    </style>
-    
+    <link href="css/style.css" rel="stylesheet"/>
+
     </head>
     
    
@@ -143,12 +35,19 @@
     
     <body>
     
+    	
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+    
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <a class="navbar-brand" href="#">RESUME BUILDER</a>
+      <a class="navbar-brand" href="#">SPRINGBOOT BANK</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -162,32 +61,57 @@
 
   <div class="row row1">
     <div class="col-lg-12 left">
-    <h1>Hi! </h1>
-    <h3>Welcome to the Resume Builder.</h3>
+   <div class="jumbotron">
+  <h1>Welcome to SPRINGBOOT Bank!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Start Banking</a></p>
+</div>
+  
     
 
 
-   <h3>Enter your information below.</h3>
-  <form action="ResumeServlet" method="post">
-    First Name: <input type="text" name="fName"></input>
+   <h3>Enter the details to complete a transaction.</h3>
+   
+   <div id= "form">
+  <form action="#" th:action="@{/bank}" th:object="${transaction}" method="post">
+    
+   <p> ACCOUNT #: <input type="number" th:field="*{accountNum}"/></p>
+ 
     <p></p>
-    Last Name: <input type="text" name="lName"></input>
-    <p></p>
+    <input type="radio" name="choice" th:field="*{action}" value="D" />Deposit<br/>
+   
 
-    Email: <input type="text" name=" &nbsp; &nbsp; Email"></input>
+  
+   <input type="radio" name="choice" th:field="*{action}" value="W"/>Withdraw<br/>
+   
+  
+   <p> AMMOUNT $ : <input type="number" th:field="*{ammount}"/></p>
+   
+    <p></p>
+    <p> REASON : <input type="text" th:field="*{reason}"/> </p>
     <p></p>
 
     
     
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit"/>
   </form>
-    
-    
-   
-   
-
-
   </div>
+   
+   <div class="row">
+  <div class="col-md-6">
+  <a href="/balance" > Check Your Balance</a> </div>
+  <div class="col-md-6"> <a href="/history" > View All Transactions history.</a></div>
+</div>
+  
+ 
+  
+    
+    
+   
+          </div>
+      </div>
+   </div>
+    
   
   <footer  id="footer">
    
@@ -204,6 +128,8 @@
     
     
     </body>
+    
+</html>
     
     
     

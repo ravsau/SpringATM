@@ -6,11 +6,35 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
-      <h1>Result</h1>
+      <h1>Transaction History</h1>
+    
+    <table>
+      <tr>
+    <th>Account ID</th>
+    <th>Account Number</th> 
+    <th>Deposit / Withdrawal</th>
+    <th>Amount</th>
+    <th>Reason</th>
+    
+  </tr>
+      
+      <tr th:each="hist : ${history}">
+        <td th:text="${hist.id}">Account ID</td>
+        <td th:text="${hist.accountNum}">Account Number</td>
+        <td th:text="${hist.action}">Deposit(D) or Withdrawal(W)</td>
+        <td th:text="${hist.ammount}">Amount</td>
+        <td th:text="${hist.reason}">Reason</td>
+        <br/>
+        
+      </tr>
+      
+      </table>
+      
+      <p th:text="${balance}" /> Balance 
      <!--   <p th:text="'Name: ' + ${user.name}" />
       <p th:text="'Food: ' + ${user.food}" />  -->
       
-      <p th:text="'Who is Bringing What:'  + ${list}" />
-      <a href="/demo/add">Submit another Person</a>
+      
+      <a href="/bank">New Transaction</a>
   </body>
 </html>
