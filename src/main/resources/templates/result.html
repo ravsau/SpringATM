@@ -6,19 +6,26 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
-      <h1>Transaction History</h1>
+  <h1>Transaction History</h1>
     
+  <form action="#" th:action="@{/history}"  method="post">
+
+<p> ACCOUNT #: <input type="number" name="aNum"/></p>
+
+    <input type="submit" value="Submit"/>
+  </form>
+      
     <table>
       <tr>
-    <th>Account ID</th>
+    <th>Transaction ID</th>
     <th>Account Number</th> 
-    <th>Deposit / Withdrawal</th>
-    <th>Amount</th>
+    <th>Deposit/Withdraw</th>
+    <th> Amount </th>
     <th>Reason</th>
     
   </tr>
       
-      <tr th:each="hist : ${history}">
+      <tr th:each="hist : ${hist}">
         <td th:text="${hist.id}">Account ID</td>
         <td th:text="${hist.accountNum}">Account Number</td>
         <td th:text="${hist.action}">Deposit(D) or Withdrawal(W)</td>
@@ -30,10 +37,8 @@
       
       </table>
       
-      <p th:text="${balance}" /> Balance 
-     <!--   <p th:text="'Name: ' + ${user.name}" />
-      <p th:text="'Food: ' + ${user.food}" />  -->
-      
+     
+ 
       
       <a href="/bank">New Transaction</a>
   </body>

@@ -12,7 +12,6 @@ import antlr.collections.List;
 // CRUD refers Create, Read, Update, Delete
 
 public interface TransactionRepository extends CrudRepository<Transactions, Long> {
-	
-	List findByAccountId(long accountId);
+	Iterable<Transactions> findByAccountNum( long accountNum);
 
 }

@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.mapping.List;
 import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.saurav.demo.Transactions;
+
+
+
 import com.saurav.demo.TransactionRepository;
 
 @Controller    // This means that this class is a Controller
@@ -62,45 +66,41 @@ public class MainController {
 	 @GetMapping("/balance")
 	    public String balanceForm(Model model) {
 	        
-	         
+	
+		
 			
 	        return "balance";
 	    }
 	 
 	 @PostMapping("/balance")
-	    public  String balanceCheck(@ModelAttribute Transactions user,Model model) {
+	    public  String balanceCheck(@RequestParam("aNum") long num ,@ModelAttribute Transactions user,Model model) {
 		 
 			
 		 int deposits=0;
 		 int withdraw=0;
 		 int balance=0;
-		 long accountNum= user.getAccountNum();
 		 
-		 for (Transactions tran : transactRepository.findAll()){
+		
+		 
+		 Iterable <Transactions>accountTrans=  transactRepository.findByAccountNum(num);
+		 
+		 for (Transactions tran: accountTrans){
 			 
-			 
-			 if (accountNum== tran.getAccountNum()){
-				 if (tran.getAction().equals("D")){
-					 
-					 deposits+=tran.getAmmount();
-				 }
+			 if (tran.getAction().equals("D")){
 				 
-				 else if(tran.getAction().equals("W")){
-					 
-					 withdraw+=tran.getAmmount();
-				 }
-				 
+				 deposits+=tran.getAmmount();
 			 }
 			 
-			 balance=deposits-withdraw;
+			 else if (tran.getAction().equals("W")){
+				 
+				 withdraw+=tran.getAmmount();
+			 }
 		 }
 		 
+		 balance=deposits-withdraw;
+		 model.addAttribute("balance", balance);
 		 
-			model.addAttribute("balance", balance);
-		
-	
-		   
-		   return "balance" ;
+		 return "balance" ;
 	    }
 	 
 	 @GetMapping("/history")
@@ -108,10 +108,24 @@ public class MainController {
 	        
 	         
 		   
-		   Iterable<Transactions> hist = transactRepository.findAll();
-		   model.addAttribute("history", hist);
+		   /*Iterable<Transactions> hist = transactRepository.findAll();
+		   model.addAttribute("history", hist);  */
 	        return "result";
 	    }
 	 
-
-}
+	 @PostMapping("/history")
+	    public  String historyCheck(@RequestParam("aNum") long num ,@ModelAttribute Transactions user,Model model) {
+		 
+		 int deposits=0;
+		 int withdraw=0;
+		 int balance=0;
+		 
+		 Iterable <Transactions>accountTrans=  transactRepository.findByAccountNum(num);
+		 
+		 model.addAttribute("hist", accountTrans);
+		 
+	     return "result" ;
+	    }
+	 
+	 
+	}
