@@ -8,6 +8,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 @Entity // This tells Hibernate to make a table out of this class
+
+
 public class Transactions {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
